@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>02 Highlights</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1280px; height: 800px; }
+  .wrap {
+    width: 1280px; height: 800px; position: relative;
+    background: #0b1220; display: flex; align-items: stretch; padding: 40px; gap: 24px;
+  }
+  .page {
+    flex: 1; background: #f8fafc; color: #0f172a; border-radius: 16px; padding: 48px 56px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative;
+  }
+  .page h1 { font-size: 34px; line-height: 1.2; margin-bottom: 10px; }
+  .meta { color: #64748b; font-size: 13px; margin-bottom: 24px; }
+  .page p { font-size: 18px; line-height: 1.75; margin-bottom: 16px; max-width: 58ch; }
+  .tooltip {
+    position: absolute; right: 48px; top: 280px; width: 300px;
+    background: rgba(15,23,42,0.96); color: #e2e8f0; border-radius: 16px;
+    border: 1px solid rgba(34,211,238,0.4); padding: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+  }
+  .tooltip h3 { font-size: 14px; color: #67e8f9; margin-bottom: 6px; }
+  .tooltip p { font-size: 13px; color: #cbd5e1; line-height: 1.5; margin: 0; }
+  .sev { display: inline-block; margin-top: 10px; font-size: 11px; color: #fda4af; }
+  .caption {
+    position: absolute; left: 48px; bottom: 28px; color: #94a3b8; font-size: 18px;
+  }
+  .caption strong { color: #f8fafc; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scan"></div>
+  <div class="page">
+    <div class="chip" style="margin-bottom:16px;color:#0e7490;border-color:#67e8f9;background:#ecfeff">Bias Noticer · 5 signals</div>
+    <h1>City officials “destroy” opposition narrative as talks resume</h1>
+    <div class="meta">Analysis demo · technique highlights on-page</div>
+    <p>
+      Officials <span class="mark">slammed</span> the proposal overnight, calling it
+      an <span class="mark lime">existential crisis</span> for the region while
+      offering few numbers that can be checked.
+    </p>
+    <p>
+      Coverage leans on a <span class="mark cyan">handful of anonymous sources</span>
+      close to the talks, then pivots to a single emotional anecdote before
+      returning to the podium clip.
+    </p>
+    <p>
+      What is missing is the plain timeline of proposals, counter-offers, and
+      the original documents both sides already filed.
+    </p>
+    <div class="tooltip">
+      <h3>Loaded language · Severity 3/5</h3>
+      <p>“Slammed” injects heat without describing the action. A neutral rewrite might name the objection or vote.</p>
+      <span class="sev">Confidence 78% · hover any mark</span>
+    </div>
+  </div>
+  <div class="caption"><strong>02 · On-page highlights</strong> — Techniques, not team colors</div>
+</div>
+</body>
+</html>

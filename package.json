@@ -1,0 +1,52 @@
+{
+  "name": "bias-noticer",
+  "displayName": "Bias Noticer",
+  "version": "1.5.2",
+  "description": "See through the propaganda. Privacy-first critical-reading augmentation that reveals bias signals and rhetorical techniques in news and long-form writing.",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "demo:assets": "powershell -ExecutionPolicy Bypass -File scripts/capture-demo-assets.ps1",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@types/mozilla-readability": "^0.2.1",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@wxt-dev/module-react": "^1.1.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "wxt": "^0.19.25"
+  },
+  "author": "Pitchfork-and-Torch",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pitchfork-and-Torch/bias-noticer"
+  },
+  "keywords": [
+    "browser-extension",
+    "bias-detection",
+    "critical-thinking",
+    "privacy",
+    "chrome-extension",
+    "xai",
+    "grok",
+    "media-literacy"
+  ]
+}

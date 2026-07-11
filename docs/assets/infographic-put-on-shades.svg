@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Bias Noticer — Put on the shades</title>
+  <desc id="desc">Infographic explaining how Bias Noticer works: extract, analyze, highlight, research paste. Inspired by critical-reading aesthetics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05070c"/>
+      <stop offset="55%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#a3e635"/>
+      <stop offset="100%" stop-color="#e879f9"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#ffffff" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <rect width="1400" height="900" fill="url(#scan)"/>
+  <!-- grid -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.45">
+    <path d="M0 180 H1400 M0 360 H1400 M0 540 H1400 M0 720 H1400"/>
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900"/>
+  </g>
+
+  <!-- top neon bar -->
+  <rect x="0" y="0" width="1400" height="4" fill="url(#neon)"/>
+
+  <!-- header -->
+  <g font-family="Segoe UI, system-ui, sans-serif">
+    <text x="70" y="78" fill="#94a3b8" font-size="18" letter-spacing="6">CRITICAL READING LAYER</text>
+    <text x="70" y="130" fill="#f8fafc" font-size="54" font-weight="800">BIAS NOTICER</text>
+    <text x="70" y="175" fill="url(#neon)" font-size="28" font-weight="700" filter="url(#glow)">See through the propaganda.</text>
+    <text x="70" y="215" fill="#94a3b8" font-size="18">They Live–inspired sunglasses for the news — techniques, not team scores.</text>
+  </g>
+
+  <!-- sunglasses icon simplified -->
+  <g transform="translate(1120,70)" filter="url(#glow)">
+    <ellipse cx="40" cy="40" rx="42" ry="28" fill="none" stroke="#22d3ee" stroke-width="5"/>
+    <ellipse cx="140" cy="40" rx="42" ry="28" fill="none" stroke="#e879f9" stroke-width="5"/>
+    <path d="M82 40 H98" stroke="#a3e635" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-10 30 Q0 10 20 18" stroke="#22d3ee" stroke-width="4" fill="none"/>
+    <path d="M190 30 Q200 10 180 18" stroke="#e879f9" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- step cards -->
+  <!-- 1 -->
+  <g>
+    <rect x="60" y="270" width="300" height="280" rx="22" fill="url(#card)" stroke="#22d3ee" stroke-width="2"/>
+    <circle cx="100" cy="320" r="22" fill="#083344" stroke="#22d3ee" stroke-width="2"/>
+    <text x="100" y="327" text-anchor="middle" fill="#22d3ee" font-size="20" font-weight="800" font-family="Segoe UI, sans-serif">1</text>
+    <text x="140" y="330" fill="#e2e8f0" font-size="22" font-weight="700" font-family="Segoe UI, sans-serif">EXTRACT</text>
+    <text x="90" y="380" fill="#94a3b8" font-size="16" font-family="Segoe UI, sans-serif">
+      <tspan x="90" dy="0">Readability + DOM text</tspan>
+      <tspan x="90" dy="28">already in your browser.</tspan>
+      <tspan x="90" dy="28">Local reader for thin pages.</tspan>
+      <tspan x="90" dy="28">No third-party bypass.</tspan>
+    </text>
+  </g>
+  <!-- arrow -->
+  <path d="M370 410 L400 410" stroke="#a3e635" stroke-width="4" marker-end="url(#arrow)"/>
+  <!-- 2 -->
+  <g>
+    <rect x="410" y="270" width="300" height="280" rx="22" fill="url(#card)" stroke="#a3e635" stroke-width="2"/>
+    <circle cx="450" cy="320" r="22" fill="#14532d" stroke="#a3e635" stroke-width="2"/>
+    <text x="450" y="327" text-anchor="middle" fill="#a3e635" font-size="20" font-weight="800" font-family="Segoe UI, sans-serif">2</text>
+    <text x="490" y="330" fill="#e2e8f0" font-size="22" font-weight="700" font-family="Segoe UI, sans-serif">ANALYZE</text>
+    <text x="440" y="380" fill="#94a3b8" font-size="16" font-family="Segoe UI, sans-serif">
+      <tspan x="440" dy="0">BYOK xAI Grok (your key).</tspan>
+      <tspan x="440" dy="28">Names rhetorical techniques.</tspan>
+      <tspan x="440" dy="28">Offline heuristics fallback.</tspan>
+      <tspan x="440" dy="28">Not a left/right meter.</tspan>
+    </text>
+  </g>
+  <path d="M720 410 L750 410" stroke="#e879f9" stroke-width="4"/>
+  <!-- 3 -->
+  <g>
+    <rect x="760" y="270" width="300" height="280" rx="22" fill="url(#card)" stroke="#e879f9" stroke-width="2"/>
+    <circle cx="800" cy="320" r="22" fill="#4a044e" stroke="#e879f9" stroke-width="2"/>
+    <text x="800" y="327" text-anchor="middle" fill="#e879f9" font-size="20" font-weight="800" font-family="Segoe UI, sans-serif">3</text>
+    <text x="840" y="330" fill="#e2e8f0" font-size="22" font-weight="700" font-family="Segoe UI, sans-serif">HIGHLIGHT</text>
+    <text x="790" y="380" fill="#94a3b8" font-size="16" font-family="Segoe UI, sans-serif">
+      <tspan x="790" dy="0">Non-destructive marks.</tspan>
+      <tspan x="790" dy="28">Tooltips + side panel.</tspan>
+      <tspan x="790" dy="28">Alt+[ ] navigate signals.</tspan>
+      <tspan x="790" dy="28">Export audit briefs.</tspan>
+    </text>
+  </g>
+  <path d="M1070 410 L1100 410" stroke="#22d3ee" stroke-width="4"/>
+  <!-- 4 -->
+  <g>
+    <rect x="1110" y="270" width="230" height="280" rx="22" fill="url(#card)" stroke="#22d3ee" stroke-width="2"/>
+    <circle cx="1150" cy="320" r="22" fill="#083344" stroke="#22d3ee" stroke-width="2"/>
+    <text x="1150" y="327" text-anchor="middle" fill="#22d3ee" font-size="20" font-weight="800" font-family="Segoe UI, sans-serif">4</text>
+    <text x="1190" y="330" fill="#e2e8f0" font-size="20" font-weight="700" font-family="Segoe UI, sans-serif">JUDGE</text>
+    <text x="1140" y="390" fill="#94a3b8" font-size="15" font-family="Segoe UI, sans-serif">
+      <tspan x="1140" dy="0">You stay in charge.</tspan>
+      <tspan x="1140" dy="26">AI assists — never</tspan>
+      <tspan x="1140" dy="26">replaces thinking.</tspan>
+    </text>
+  </g>
+
+  <!-- bottom strip -->
+  <rect x="60" y="600" width="1280" height="230" rx="24" fill="#020617" stroke="#334155" stroke-width="1"/>
+  <text x="100" y="655" fill="#f8fafc" font-size="24" font-weight="700" font-family="Segoe UI, sans-serif">Install · free &amp; open source</text>
+  <text x="100" y="700" fill="#94a3b8" font-size="17" font-family="Segoe UI, sans-serif">
+    <tspan x="100" dy="0">1. Download the Chrome MV3 zip from Releases</tspan>
+    <tspan x="100" dy="28">2. chrome://extensions → Developer mode → Load unpacked</tspan>
+    <tspan x="100" dy="28">3. Point at the unzipped folder · pin the puzzle icon · Ctrl+Shift+B</tspan>
+  </text>
+  <text x="100" y="800" fill="#64748b" font-size="14" font-family="Segoe UI, sans-serif">Privacy-first · BYOK · MIT · Not affiliated with They Live / Universal</text>
+
+  <rect x="0" y="896" width="1400" height="4" fill="url(#neon)"/>
+</svg>

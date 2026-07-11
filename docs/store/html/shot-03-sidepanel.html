@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>03 Side panel</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1280px; height: 800px; }
+  .wrap {
+    width: 1280px; height: 800px; display: grid; grid-template-columns: 1fr 400px;
+    background: #020617;
+  }
+  .article {
+    padding: 48px 56px; color: #cbd5e1; background:
+      radial-gradient(ellipse at top left, rgba(34,211,238,0.08), transparent 50%), #0b1220;
+  }
+  .article h1 { font-size: 30px; color: #f8fafc; margin: 12px 0 18px; max-width: 20ch; }
+  .article p { font-size: 16px; line-height: 1.7; max-width: 48ch; margin-bottom: 14px; }
+  .panel {
+    border-left: 1px solid #1e293b; background: #0f172a; padding: 20px 18px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tab {
+    font-size: 11px; padding: 6px 10px; border-radius: 999px;
+    background: #1e293b; color: #94a3b8;
+  }
+  .tab.on { background: rgba(34,211,238,0.15); color: #67e8f9; border: 1px solid rgba(34,211,238,0.4); }
+  .card {
+    background: #111827; border: 1px solid #1e293b; border-radius: 14px; padding: 12px;
+  }
+  .card h4 { font-size: 13px; color: #e2e8f0; margin-bottom: 6px; }
+  .card p { font-size: 12px; color: #94a3b8; line-height: 1.45; }
+  .badge { font-size: 10px; color: #f9a8d4; }
+  .gauge {
+    width: 88px; height: 88px; border-radius: 50%; margin: 8px auto;
+    background: conic-gradient(#a3e635 0 200deg, #1e293b 200deg);
+    display: grid; place-items: center;
+  }
+  .gauge span {
+    width: 66px; height: 66px; border-radius: 50%; background: #0f172a;
+    display: grid; place-items: center; font-weight: 800; font-size: 20px;
+  }
+  .caption {
+    position: absolute; left: 48px; bottom: 28px; color: #94a3b8; font-size: 18px;
+  }
+  .caption strong { color: #f8fafc; }
+  body { position: relative; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scan"></div>
+  <div class="article">
+    <div class="chip">Side panel open · Ctrl+Shift+Y</div>
+    <h1>How the story frames the stakes</h1>
+    <p>Bias Noticer clusters signals so dense articles stay readable. Click a card to scroll and pulse the mark on the page.</p>
+    <p>Export Markdown, JSON, or a research brief with access method for your audit trail.</p>
+  </div>
+  <div class="panel">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="font-weight:800">Bias Noticer</div>
+      <span class="chip">v1.4</span>
+    </div>
+    <div class="tabs">
+      <span class="tab on">Detected (5)</span>
+      <span class="tab">Summary</span>
+      <span class="tab">Evidence</span>
+      <span class="tab">Research</span>
+    </div>
+    <div class="gauge"><span>58</span></div>
+    <div class="card">
+      <div class="badge">LOADED LANGUAGE · 3/5</div>
+      <h4>“existential crisis”</h4>
+      <p>Amplifies urgency. Ask what measurable threshold failed.</p>
+    </div>
+    <div class="card">
+      <div class="badge">SOURCE SELECTION · 2/5</div>
+      <h4>Anonymous officials only</h4>
+      <p>Missing on-record documents and opposing technical brief.</p>
+    </div>
+    <div class="card">
+      <div class="badge">OMISSION · 3/5</div>
+      <h4>No baseline numbers</h4>
+      <p>Compare prior periods before accepting the trend claim.</p>
+    </div>
+  </div>
+  <div class="caption"><strong>03 · Side panel</strong> — Full spectrum, not a popup glance</div>
+</div>
+</body>
+</html>

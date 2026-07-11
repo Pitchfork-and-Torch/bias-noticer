@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><title>09 Settings</title>
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:#f1f5f9;color:#0f172a;padding:32px}
+.wrap{max-width:720px;margin:0 auto}
+h1{font-size:22px;display:flex;gap:10px;align-items:center}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;margin-top:16px;box-shadow:0 4px 20px rgba(0,0,0,.04)}
+label{display:block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#64748b;margin-bottom:6px}
+input,select{width:100%;padding:10px 12px;border-radius:12px;border:1px solid #e2e8f0;font:14px/1.4 ui-monospace,monospace}
+.row{display:flex;gap:8px;margin-top:8px}
+.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+.p{background:#0284c7;color:#fff}.s{background:#e2e8f0}
+.ok{margin-top:10px;font-size:12px;color:#15803d;font-weight:600}
+.hint{font-size:12px;color:#64748b;margin-top:8px;line-height:1.45}
+</style></head><body>
+<div class="wrap">
+  <h1>
+    <svg width="40" height="40" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b1220"/><rect x="8" y="26" width="18" height="14" rx="4" fill="#0ea5e9"/><rect x="38" y="26" width="18" height="14" rx="4" fill="#0ea5e9"/></svg>
+    Bias Noticer · Settings
+  </h1>
+  <div class="card">
+    <label>xAI API key (BYOK · local only)</label>
+    <input type="password" value="xai-••••••••••••••••" readonly/>
+    <div class="row"><button class="btn p">Test</button><button class="btn s">Show</button></div>
+    <div class="ok">Connected (grok-4.3)</div>
+    <label style="margin-top:16px">Model</label>
+    <select><option selected>Grok 4.3 — default for new installs</option><option>Grok 4.5 — flagship</option></select>
+    <p class="hint">New installs default to <code>grok-4.3</code>. xAI API usage is billed to your key. Retired ids like grok-2-latest auto-migrate.</p>
+  </div>
+</div>
+</body></html>

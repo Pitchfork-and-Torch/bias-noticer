@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Small promo 440x280</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 440px; height: 280px; }
+  .wrap {
+    width: 440px; height: 280px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(34,211,238,0.25), transparent 45%),
+      radial-gradient(ellipse at 10% 90%, rgba(232,121,249,0.2), transparent 40%),
+      #05070c;
+    display: flex; flex-direction: column; justify-content: center; padding: 28px 32px;
+  }
+  .neon-bar { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+  h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; }
+  .tag { color: #a3e635; font-size: 15px; font-weight: 700; margin-top: 6px; }
+  .sub { color: #94a3b8; font-size: 13px; margin-top: 10px; max-width: 28ch; line-height: 1.4; }
+  .glasses {
+    position: absolute; right: 28px; top: 88px; width: 90px; height: 40px;
+  }
+  .glasses::before, .glasses::after {
+    content: ""; position: absolute; top: 4px; width: 34px; height: 28px;
+    border: 3px solid #22d3ee; border-radius: 50%; box-shadow: 0 0 14px #22d3ee;
+  }
+  .glasses::before { left: 0; }
+  .glasses::after { right: 0; border-color: #e879f9; box-shadow: 0 0 14px #e879f9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="neon neon-bar"></div>
+  <div class="scan"></div>
+  <div class="glasses"></div>
+  <div class="chip">Chrome extension</div>
+  <h1>Bias Noticer</h1>
+  <div class="tag">See through the propaganda.</div>
+  <p class="sub">Critical-reading shades for news — techniques, not team scores.</p>
+</div>
+</body>
+</html>
