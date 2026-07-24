@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>05 Privacy & themes</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1280px; height: 800px; position: relative; }
+  .wrap {
+    width: 1280px; height: 800px;
+    background:
+      radial-gradient(ellipse at 30% 80%, rgba(232,121,249,0.15), transparent 45%),
+      #05070c;
+    padding: 56px 64px;
+  }
+  h1 { font-size: 36px; margin: 12px 0 8px; }
+  .sub { color: #94a3b8; font-size: 16px; margin-bottom: 28px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .card {
+    min-height: 280px; padding: 22px; border-radius: 20px;
+    background: rgba(15,23,42,0.9); border: 1px solid #334155;
+  }
+  .card h3 { font-size: 18px; margin-bottom: 12px; color: #67e8f9; }
+  .card li { margin: 10px 0 0 16px; color: #cbd5e1; font-size: 14px; line-height: 1.45; }
+  .they {
+    border-color: #a3e635; box-shadow: 0 0 30px rgba(163,230,53,0.15);
+  }
+  .they h3 { color: #bef264; }
+  .caption {
+    position: absolute; left: 64px; bottom: 36px; color: #94a3b8; font-size: 18px;
+  }
+  .caption strong { color: #f8fafc; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scan"></div>
+  <div class="chip">Privacy-first · BYOK · MIT</div>
+  <h1>Your key. Your machine. Your judgment.</h1>
+  <p class="sub">Bias Noticer is open source. Analysis uses your xAI key only when you choose — or local heuristics offline.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Local by default</h3>
+      <ul>
+        <li>API key in chrome.storage.local</li>
+        <li>No ads or trackers</li>
+        <li>Clear-all-data in Settings</li>
+        <li>Optional limited-send mode</li>
+      </ul>
+    </div>
+    <div class="card they">
+      <h3>They Live theme</h3>
+      <ul>
+        <li>Scanlines &amp; neon accents</li>
+        <li>Light / Dark / System too</li>
+        <li>High-contrast CSS support</li>
+        <li>Metaphor, not affiliation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Not a paywall crack</h3>
+      <ul>
+        <li>Reader uses DOM text only</li>
+        <li>Research paste for lawful access</li>
+        <li>Thin-page guidance, no waste</li>
+        <li>Support journalism you value</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caption"><strong>05 · Privacy &amp; themes</strong> — See through the propaganda</div>
+</div>
+</body>
+</html>

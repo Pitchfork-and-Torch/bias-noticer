@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>04 Research paste</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1280px; height: 800px; position: relative; }
+  .wrap {
+    width: 1280px; height: 800px;
+    background:
+      radial-gradient(ellipse at 70% 20%, rgba(163,230,53,0.12), transparent 40%),
+      #05070c;
+    display: flex; align-items: center; justify-content: center; gap: 40px; padding: 40px;
+  }
+  .panel {
+    width: 520px; padding: 28px; border-radius: 22px;
+  }
+  label { display: block; font-size: 12px; color: #94a3b8; margin: 12px 0 6px; }
+  input, select, textarea {
+    width: 100%; background: #0f172a; border: 1px solid #334155; color: #e2e8f0;
+    border-radius: 10px; padding: 10px 12px; font-size: 13px;
+  }
+  textarea { min-height: 140px; resize: none; font-family: ui-monospace, monospace; font-size: 12px; }
+  .note {
+    width: 420px; padding: 24px; border-radius: 18px;
+    border: 1px solid rgba(163,230,53,0.35); background: rgba(20,83,45,0.25);
+  }
+  .note h2 { font-size: 22px; color: #ecfccb; margin-bottom: 10px; }
+  .note li { margin: 8px 0 0 18px; color: #d9f99d; font-size: 14px; line-height: 1.45; }
+  .caption {
+    position: absolute; left: 48px; bottom: 28px; color: #94a3b8; font-size: 18px;
+  }
+  .caption strong { color: #f8fafc; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scan"></div>
+  <div class="panel glass">
+    <div class="chip" style="margin-bottom:10px">Research tab · legal paste path</div>
+    <h1 style="font-size:24px;margin-bottom:4px">Paste &amp; analyze</h1>
+    <p style="font-size:13px;color:#94a3b8;line-height:1.45">For text you already have lawful access to. Bias Noticer never bypasses paywalls.</p>
+    <label>Source URL</label>
+    <input value="https://example.com/article"/>
+    <label>How you got this text</label>
+    <select><option>Subscription / paid login</option><option>Library access</option></select>
+    <label>Article text</label>
+    <textarea>Paste full article text here for a complete technique audit…</textarea>
+    <div style="display:flex;gap:8px;margin-top:14px">
+      <button class="btn-primary">Analyze paste</button>
+      <button class="btn-ghost">Save brief (.md)</button>
+    </div>
+  </div>
+  <div class="note">
+    <h2>Audit trail built-in</h2>
+    <ul>
+      <li>Access method + optional note</li>
+      <li>Operator attestation</li>
+      <li>Export Markdown / JSON research brief</li>
+      <li>Works when the live page is metered</li>
+    </ul>
+  </div>
+  <div class="caption"><strong>04 · Research paste</strong> — Lawful full-text audits</div>
+</div>
+</body>
+</html>

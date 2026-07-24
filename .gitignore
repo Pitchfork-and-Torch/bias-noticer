@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build
+.output/
+.wxt/
+dist/
+*.zip
+
+# Env / secrets — never commit API keys
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Logs & coverage
+*.log
+npm-debug.log*
+coverage/
+.nyc_output/
+
+# Local agent / temp
+.tmp/
+.cache/
+
+# Browser test profiles & smoke artifacts (never commit)
+.browser-profile/
+.browser-profile-*/
+.test-artifacts/
+*.heapsnapshot
+
+# Never ship local browser profiles (may contain API keys)
+.browser-profile/
+.browser-profile-*/
+.test-artifacts/
+dist-release/

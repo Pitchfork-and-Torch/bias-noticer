@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Marquee 1400x560</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1400px; height: 560px; }
+  .wrap {
+    width: 1400px; height: 560px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse at 15% 40%, rgba(34,211,238,0.2), transparent 40%),
+      radial-gradient(ellipse at 85% 60%, rgba(232,121,249,0.18), transparent 42%),
+      linear-gradient(135deg, #05070c 0%, #0b1220 55%, #111827 100%);
+    display: flex; align-items: center; padding: 0 80px; gap: 48px;
+  }
+  .neon-bar { position: absolute; top: 0; left: 0; right: 0; height: 5px; }
+  .left { flex: 1; max-width: 720px; }
+  h1 { font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; }
+  .tag {
+    margin-top: 14px; font-size: 26px; font-weight: 700;
+    background: linear-gradient(90deg, #22d3ee, #a3e635, #e879f9);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .sub { margin-top: 16px; color: #94a3b8; font-size: 18px; line-height: 1.5; max-width: 36ch; }
+  .pills { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .right {
+    width: 420px; height: 360px; border-radius: 24px; border: 1px solid #334155;
+    background: rgba(15,23,42,0.85); padding: 24px; position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  }
+  .right h3 { font-size: 14px; color: #67e8f9; margin-bottom: 12px; }
+  .line { height: 10px; border-radius: 6px; background: #1e293b; margin: 10px 0; }
+  .line.w1 { width: 92%; } .line.w2 { width: 78%; } .line.w3 { width: 85%; }
+  .hl { height: 14px; border-radius: 4px; background: linear-gradient(90deg, transparent, rgba(244,63,94,0.5), transparent); margin: 14px 0; }
+  .glasses {
+    position: absolute; right: 36px; bottom: 36px; width: 110px; height: 48px;
+  }
+  .glasses::before, .glasses::after {
+    content: ""; position: absolute; top: 6px; width: 42px; height: 34px;
+    border: 3px solid #22d3ee; border-radius: 50%; box-shadow: 0 0 18px #22d3ee;
+  }
+  .glasses::before { left: 0; }
+  .glasses::after { right: 0; border-color: #e879f9; box-shadow: 0 0 18px #e879f9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="neon neon-bar"></div>
+  <div class="scan"></div>
+  <div class="left">
+    <div class="chip">Open source · BYOK · Privacy-first</div>
+    <h1>BIAS NOTICER</h1>
+    <div class="tag">See through the propaganda.</div>
+    <p class="sub">They Live–inspired critical reading for the modern news feed. Highlight techniques. Keep your mind free.</p>
+    <div class="pills">
+      <span class="chip">Put on shades</span>
+      <span class="chip">Side panel</span>
+      <span class="chip">Research paste</span>
+      <span class="chip">No paywall bypass</span>
+    </div>
+  </div>
+  <div class="right">
+    <h3>Article · signals live</h3>
+    <div class="line w1"></div>
+    <div class="hl"></div>
+    <div class="line w2"></div>
+    <div class="line w3"></div>
+    <div class="hl" style="background: linear-gradient(90deg, transparent, rgba(34,211,238,0.5), transparent)"></div>
+    <div class="line w2"></div>
+    <div class="glasses"></div>
+  </div>
+</div>
+</body>
+</html>
