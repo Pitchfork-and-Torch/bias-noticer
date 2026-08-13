@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>01 Popup</title>
+<link rel="stylesheet" href="_shared.css"/>
+<style>
+  body { width: 1280px; height: 800px; }
+  .wrap {
+    width: 1280px; height: 800px; position: relative;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(34,211,238,0.15), transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(232,121,249,0.12), transparent 45%),
+      #05070c;
+    display: flex; align-items: center; justify-content: center; gap: 48px;
+    padding: 48px;
+  }
+  .browser {
+    width: 620px; height: 620px; border-radius: 16px; overflow: hidden;
+    border: 1px solid #334155; background: #0f172a;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+  }
+  .bar { height: 40px; background: #1e293b; display: flex; align-items: center; gap: 8px; padding: 0 14px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .url { flex: 1; height: 24px; border-radius: 6px; background: #0f172a; color: #64748b; font-size: 12px; display: flex; align-items: center; padding: 0 10px; }
+  .article { padding: 28px 32px; color: #cbd5e1; font-size: 15px; line-height: 1.65; }
+  .article h2 { color: #f8fafc; font-size: 26px; margin-bottom: 12px; }
+  .popup {
+    width: 360px; padding: 22px; box-shadow: 0 25px 60px rgba(34,211,238,0.15);
+  }
+  .logo-row { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .glasses {
+    width: 44px; height: 28px; position: relative;
+  }
+  .glasses::before, .glasses::after {
+    content: ""; position: absolute; top: 2px; width: 18px; height: 16px;
+    border: 2px solid #22d3ee; border-radius: 50%; box-shadow: 0 0 10px #22d3ee;
+  }
+  .glasses::before { left: 0; }
+  .glasses::after { right: 0; border-color: #e879f9; box-shadow: 0 0 10px #e879f9; }
+  .score {
+    width: 120px; height: 120px; border-radius: 50%; margin: 12px auto 16px;
+    background: conic-gradient(#22d3ee 0 230deg, #1e293b 230deg);
+    display: grid; place-items: center;
+  }
+  .score i {
+    width: 92px; height: 92px; border-radius: 50%; background: #0f172a;
+    display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: 28px;
+  }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .caption {
+    position: absolute; left: 48px; bottom: 36px; font-size: 18px; color: #94a3b8; letter-spacing: 0.04em;
+  }
+  .caption strong { color: #f8fafc; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="scan"></div>
+  <div class="browser">
+    <div class="bar">
+      <span class="dot" style="background:#f87171"></span>
+      <span class="dot" style="background:#fbbf24"></span>
+      <span class="dot" style="background:#34d399"></span>
+      <div class="url">news.example / world / framing-report</div>
+    </div>
+    <div class="article">
+      <h2>Officials slam “chaos” as talks stall</h2>
+      <p>Leaders <span class="mark">slammed</span> rivals overnight as negotiators sought common ground. Analysts say the language is designed to heat coverage, not clarify terms.</p>
+      <p>The piece leans on unnamed sources and selective quotes while softer context sits lower on the page…</p>
+    </div>
+  </div>
+  <div class="popup glass">
+    <div class="logo-row">
+      <div class="glasses"></div>
+      <div>
+        <div style="font-weight:800;font-size:18px">Bias Noticer</div>
+        <div style="font-size:12px;color:#94a3b8">See through the propaganda.</div>
+      </div>
+    </div>
+    <div class="chip">Live article · ready</div>
+    <div class="score"><i>64</i></div>
+    <div style="text-align:center;font-size:12px;color:#94a3b8;margin-bottom:8px">Neutrality spectrum</div>
+    <div class="actions">
+      <button class="btn-primary">Put on shades</button>
+      <button class="btn-ghost">Demo</button>
+      <button class="btn-ghost">Reader</button>
+      <button class="btn-ghost">Paste</button>
+    </div>
+    <p style="margin-top:14px;font-size:11px;color:#64748b;line-height:1.45">Ctrl+Shift+B · Demo paints sample highlights · BYOK Grok optional</p>
+  </div>
+  <div class="caption"><strong>01 · Popup dashboard</strong> — Put on shades in one click</div>
+</div>
+</body>
+</html>

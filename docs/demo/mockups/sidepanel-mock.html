@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bias Noticer — Side panel mock (README asset)</title>
+  <style>
+    :root { --bg:#0b1220; --card:#111827; --text:#e2e8f0; --muted:#94a3b8; --brand:#0ea5e9; --rose:#f43f5e; --violet:#8b5cf6; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background:#1e293b; color:var(--text); }
+    .browser { max-width: 1100px; margin: 24px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 25px 80px rgba(0,0,0,.45); border:1px solid #334155; }
+    .chrome { display:flex; gap:8px; align-items:center; padding:10px 14px; background:#0f172a; }
+    .dot { width:10px; height:10px; border-radius:50%; background:#475569; }
+    .url { flex:1; background:#1e293b; border-radius:8px; padding:6px 12px; font-size:12px; color:var(--muted); }
+    .row { display:grid; grid-template-columns: 1fr 360px; min-height: 640px; }
+    .article { background:#f8fafc; color:#0f172a; padding:28px 32px; font-family: Georgia, serif; font-size:17px; line-height:1.65; }
+    .article h1 { font-family: Inter, system-ui, sans-serif; font-size:1.6rem; line-height:1.25; margin:0 0 12px; }
+    .by { font-size:13px; color:#64748b; margin-bottom:20px; font-family: Inter, sans-serif; }
+    mark.bn { background: rgba(244,63,94,.12); text-decoration: underline wavy #f43f5e; text-underline-offset:3px; border-radius:2px; cursor:pointer; }
+    mark.bn2 { background: rgba(14,165,233,.12); text-decoration: underline wavy #0ea5e9; text-underline-offset:3px; }
+    .tip { position:absolute; left: 42%; top: 48%; width:280px; background:rgba(15,23,42,.94); color:#e2e8f0; padding:10px 12px; border-radius:12px; font-family:Inter,sans-serif; font-size:13px; box-shadow:0 12px 40px rgba(0,0,0,.35); border:1px solid rgba(148,163,184,.25); }
+    .tip .t { font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:#f43f5e; margin-bottom:4px; }
+    .panel { background:var(--bg); padding:16px; border-left:1px solid #1e293b; }
+    .brand { display:flex; gap:10px; align-items:center; margin-bottom:14px; }
+    .brand h2 { margin:0; font-size:14px; }
+    .brand p { margin:0; font-size:10px; color:var(--muted); }
+    .card { background:var(--card); border:1px solid #1f2937; border-radius:16px; padding:14px; margin-bottom:12px; }
+    .gauge { width:88px; height:88px; border-radius:50%; background: conic-gradient(#eab308 0 210deg, #1e293b 0); display:grid; place-items:center; }
+    .gauge i { width:68px; height:68px; border-radius:50%; background:var(--card); display:grid; place-items:center; font-weight:800; font-size:22px; }
+    .flex { display:flex; gap:12px; }
+    .bar { height:8px; border-radius:99px; overflow:hidden; background:#1e293b; display:flex; margin:8px 0; }
+    .bar span:nth-child(1){ width:40%; background:var(--rose); }
+    .bar span:nth-child(2){ width:30%; background:var(--violet); }
+    .bar span:nth-child(3){ width:20%; background:var(--brand); }
+    .bar span:nth-child(4){ width:10%; background:#f59e0b; }
+    .meta { font-size:11px; color:var(--muted); }
+    .sig { border:1px solid #1f2937; border-radius:14px; padding:10px; margin-top:8px; background:#0b1220; }
+    .badge { display:inline-block; font-size:10px; font-weight:700; padding:2px 8px; border-radius:99px; background:rgba(244,63,94,.15); color:#fb7185; }
+    .disc { font-size:10px; color:#94a3b8; margin-top:10px; line-height:1.4; }
+    .ann { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); background:#0ea5e9; color:#fff; padding:8px 14px; border-radius:99px; font-size:12px; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="browser">
+    <div class="chrome">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">https://www.nytimes.com/2026/07/11/business/media/new-york-times-trump-subpoenas.html</div>
+    </div>
+    <div class="row">
+      <div class="article" style="position:relative">
+        <h1>Times Faces Subpoenas in Widening Dispute Over Coverage</h1>
+        <div class="by">Business · Media · Simulated demo copy for product mock only</div>
+        <p>
+          The newsroom <mark class="bn">slammed</mark> the latest legal maneuver as an
+          unprecedented threat to independent journalism, while describing its own
+          reporting as routine and carefully sourced.
+        </p>
+        <p>
+          Critics argued the paper’s framing
+          <mark class="bn2">omitted competing accounts</mark>
+          of how editorial choices shaped the underlying controversy.
+        </p>
+        <p>
+          A spokesperson said the organization would “vigorously defend” its practices.
+          Legal experts urged readers to consult primary filings rather than summaries alone.
+        </p>
+        <div class="tip">
+          <div class="t">Loaded language</div>
+          Combat verb steers interpretation before facts land.
+          <div class="meta" style="margin-top:6px">Severity 3/5 · 74% conf · click for details</div>
+        </div>
+      </div>
+      <aside class="panel">
+        <div class="brand">
+          <svg width="32" height="32" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0ea5e9"/><rect x="10" y="26" width="16" height="12" rx="3" fill="#082f49"/><rect x="38" y="26" width="16" height="12" rx="3" fill="#082f49"/></svg>
+          <div>
+            <h2>Bias Noticer</h2>
+            <p>Critical reading layer</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="flex">
+            <div class="gauge"><i>58</i></div>
+            <div>
+              <div class="meta">HARD NEWS · grok-4.3</div>
+              <div style="font-size:13px;margin-top:6px;line-height:1.4">
+                Technique-level signals in institutional self-coverage — not a left/right verdict.
+              </div>
+            </div>
+          </div>
+          <div class="meta" style="margin-top:10px">TECHNIQUE BREAKDOWN</div>
+          <div class="bar"><span></span><span></span><span></span><span></span></div>
+          <div class="meta">Loaded language 40% · Omission 30% · Source selection 20%</div>
+        </div>
+        <div class="card">
+          <div class="meta">SELECTED SIGNAL</div>
+          <div class="sig">
+            <span class="badge">Loaded language</span>
+            <p style="font-size:13px;margin:8px 0;font-style:italic">“slammed the latest legal maneuver”</p>
+            <p style="font-size:12px;color:#cbd5e1;margin:0;line-height:1.45">
+              Prefer docket language and hearing transcripts over combat metaphors when describing filings.
+            </p>
+          </div>
+        </div>
+        <p class="disc">AI-assisted analysis. Not infallible. Augments critical thinking — does not replace it. Reader extract is local and educational.</p>
+      </aside>
+    </div>
+  </div>
+  <div class="ann">Mock for README / demo — open in browser → screenshot</div>
+</body>
+</html>
