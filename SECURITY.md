@@ -10,6 +10,10 @@ Do not post API keys or personal data in public issues.
 
 Bias Noticer is a browser extension that may call `https://api.x.ai/*` only when the user supplies their own key. Keys are stored in `chrome.storage.local` by design.
 
+Supported: **2.1.x**. Host permissions are `api.x.ai` plus http(s) pages for extract/highlights. Do not add hosts without optional-grant UX.
+
+Grades-card export is local canvas only and must not grow a network path.
+
 ## Out of scope
 
 Third-party paywall circumvention, credential theft, or abuse of publisher sites is not supported and not accepted as a feature request.

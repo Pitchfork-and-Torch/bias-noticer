@@ -17,6 +17,8 @@
 | `npm run build` | Production Chrome build |
 | `npm run zip` | Store-ready zip |
 | `npm run compile` | `tsc --noEmit` |
+| `npm run validate` | Vision + gold + version-consistency smokes |
+| `npm run zip` | Store-ready Chrome zip (human CWS upload) |
 | `npm run dev:firefox` | Firefox target |
 
 ## Message protocol
@@ -28,6 +30,7 @@ See `lib/types.ts` → `MessageType`. All async handlers return `{ ok: true, dat
 | Module | Role |
 |--------|------|
 | `lib/grades.ts` | Neutrality 0–100 → A+…F |
+| `lib/grade-card.ts` | Local PNG/JPEG share cards (no network) |
 | `lib/site-cache.ts` | `bn_site_*`, `bn_jour_*`, `bn_scan_history`; byline parse |
 | Side panel **Outlets** tab | Dual scoreboard + clickable audit history |
 
@@ -55,8 +58,10 @@ See [GRADES.md](./GRADES.md) and the infographic under `docs/assets/infographic-
 
 ## Packaging checklist
 
-- [ ] Bump version in `package.json` + `wxt.config.ts` manifest  
-- [ ] Privacy policy URL live  
+- [ ] Bump version in `package.json` **and** `lib/version.ts` (WXT reads package.json)  
+- [ ] `npm run validate` (includes `validate:version`)  
+- [ ] Privacy policy URL live (`docs/site/privacy/` → jonbailey.xyz)  
 - [ ] Icons 128/48/16  
 - [ ] Screenshots  
 - [ ] No secrets in zip  
+- [ ] Human CWS upload — see [`store/CWS-DROP.md`](./store/CWS-DROP.md)  

@@ -55,6 +55,17 @@ Raw model `neutrality_score` is retained for transparency; `calibrated_neutralit
 - All data stays in `chrome.storage.local`
 - Settings → clear all data wipes sites, journalists, and scan history together
 
+## Share card (v2.1)
+
+Popup and side panel can export a **1200×630 PNG or JPEG** of the current grade (`lib/grade-card.ts`).
+
+- Rendered on-device (Canvas 2D). No upload.
+- Fields: title, hostname, letter grade, neutrality, technique *names* + counts.
+- Not included: article body, span quotes, overviews, evidence.
+- Outlet / journalist rows export the same card from your local scoreboard.
+
+Playground: [`assets/grade-card-playground.html`](assets/grade-card-playground.html).
+
 ## Infographic
 
 - PNG: [`assets/infographic-letter-grades.png`](assets/infographic-letter-grades.png)

@@ -2,6 +2,30 @@
 
 Bias Noticer — They Live–inspired critical-reading extension. Highlights rhetorical techniques with BYOK Grok; privacy-first; no paywall bypass. Local letter grades, Signal Radar, Technique Academy, and outlet/journalist scoreboards from your own scans.
 
+## 2.1.0 — Shareable grades, honest docs
+
+Visible upgrades on top of 2.0. Detection engine and host permissions are unchanged.
+
+### Grades card (local)
+- Export a **1200×630 PNG or JPEG** of the current scan grade (or an outlet / journalist scoreboard row)
+- Built with Canvas 2D in the popup / side panel — **no upload**, no new network calls
+- Card shows title, hostname, letter grade, neutrality, technique *names* — never article body or span quotes
+- Copy a tweet caption that stays directionally agnostic
+
+### Product pages & AEO
+- Source-of-truth pages in `docs/site/`: product, privacy, support, install hop, `llms.txt`, share-card HTML
+- Install hop keeps Open Graph / X large-image previews (CWS URLs still have no custom OG tags)
+- Chrome Web Store listing draft URLs now match the live item (homepage / support / privacy on jonbailey.xyz)
+
+### Honesty
+- Privacy policy dated **2026-09-01** — documents http(s) page hosts + `api.x.ai`, scoreboards, local grade cards
+- Settings → Privacy lists the permissions we actually ship (no extra hosts)
+- CWS drop is a **human zip upload** (`docs/store/CWS-DROP.md`) — we cannot auto-publish the store
+
+### Version
+- `package.json`, `lib/version.ts`, README badge, changelog, and site files all say **2.1.0**
+- `npm run validate:version` fails the build if those labels drift
+
 ## 2.0.0 — Exceptional sunglasses (next-gen)
 
 ### Detection excellence

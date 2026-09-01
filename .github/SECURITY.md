@@ -4,7 +4,9 @@
 
 | Version | Supported |
 |---------|-----------|
-| 1.x     | Yes       |
+| 2.1.x   | Yes       |
+| 2.0.x   | Yes       |
+| 1.x     | Security fixes only |
 
 ## Reporting a vulnerability
 
@@ -13,7 +15,7 @@ Please **do not** open a public issue for security flaws that could expose API k
 Prefer:
 
 1. GitHub **Private vulnerability reporting** (if enabled on the repo), or  
-2. Email the maintainers (add contact before public launch)
+2. Email [bias@jonbailey.xyz](mailto:bias@jonbailey.xyz)
 
 Include:
 

@@ -1,7 +1,7 @@
 {
   "name": "bias-noticer",
   "displayName": "Bias Noticer",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "See through the propaganda. Privacy-first critical-reading sunglasses — multi-pass technique detection, Academy mastery, research briefs. Never a left/right meter.",
   "type": "module",
   "scripts": {
@@ -14,7 +14,8 @@
     "compile": "tsc --noEmit",
     "validate:vision": "node scripts/validate-vision.mjs",
     "validate:gold": "node scripts/validate-gold.mjs",
-    "validate": "node scripts/validate-vision.mjs && node scripts/validate-gold.mjs",
+    "validate:version": "node scripts/validate-version.mjs",
+    "validate": "node scripts/validate-vision.mjs && node scripts/validate-gold.mjs && node scripts/validate-version.mjs",
     "demo:assets": "powershell -ExecutionPolicy Bypass -File scripts/capture-demo-assets.ps1",
     "postinstall": "wxt prepare"
   },

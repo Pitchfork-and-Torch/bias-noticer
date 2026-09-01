@@ -1,5 +1,8 @@
 # Chrome Web Store listing draft
 
+Live item: https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc  
+Canonical copy for the dashboard: [`store/STORE-LISTING-FINAL.md`](./store/STORE-LISTING-FINAL.md)
+
 ## Short description (132 chars max)
 
 See through the propaganda. Highlight rhetorical bias techniques in news — explanations, counterpoints, never censorship.
@@ -17,17 +20,20 @@ Inspired by the sunglasses from the film They Live — not as a cartoon filter, 
 • Explains the technique, why it matters, and where to look for balance
 • Opens a Side Panel for full context, rewrites, and export
 • Letter grades (A+–F) and local scoreboards for outlets and journalists from your own scans
+• Grades-card PNG/JPEG rendered on your device for tweets (no article-text upload)
 
 **What it is NOT**
 • Not a left/right “bias meter”
 • Not a fact-checker that issues final verdicts
 • Not a content blocker or censor
+• Not a paywall bypass
 
 **Privacy**
 • API key stored locally in your browser
 • Optional “never send full article” limited mode
 • Local cache and scoreboards you can clear anytime
 • No ads, no data selling
+• Hosts: current-page http(s) + api.x.ai only
 
 **Keyboard**
 • Ctrl/Cmd+Shift+B — toggle shades

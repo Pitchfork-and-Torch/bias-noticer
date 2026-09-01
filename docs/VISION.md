@@ -1,6 +1,6 @@
-# They Live Vision — v2.0 Exceptional sunglasses
+# They Live Vision — v2.1 Exceptional sunglasses
 
-Signal Radar 2.0 + Technique Academy 2.0 + multi-pass detection + research briefs — local-first media literacy.
+Signal Radar 2.0 + Technique Academy 2.0 + multi-pass detection + research briefs + local grades-card export — local-first media literacy.
 
 ## Non-negotiable principles
 
@@ -37,6 +37,7 @@ Code: `lib/structure.ts`, `lib/multi-pass.ts`, `lib/api.ts`, `lib/prompt.ts` (v2
 ## Research output
 
 - One-click Markdown/JSON/print brief with evidence table + methodology  
+- Local grades-card PNG/JPEG (1200×630) for tweets — `lib/grade-card.ts`  
 - Comparison: `lib/compare.ts`  
 - Media diet: `lib/media-diet.ts` (local history only)
 

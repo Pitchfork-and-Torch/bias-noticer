@@ -12,6 +12,8 @@ import type {
   ExtensionSettings,
 } from "../../lib/types";
 import { applyTheme as applyThemeMode } from "../../lib/theme";
+import { GradeCardExport } from "../../components/GradeCardExport";
+import { analysisToGradeCardModel } from "../../lib/grade-card";
 import { APP_VERSION } from "../../lib/version";
 
 export function PopupApp() {
@@ -399,6 +401,13 @@ export function PopupApp() {
               </div>
             </button>
           )}
+
+          <div className="mt-3">
+            <GradeCardExport
+              compact
+              model={analysisToGradeCardModel(analysis)}
+            />
+          </div>
 
           <div className="mt-3 flex gap-2">
             <button className="bn-btn-primary flex-1" onClick={() => void openPanel()}>

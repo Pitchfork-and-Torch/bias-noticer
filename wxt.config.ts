@@ -12,6 +12,7 @@ import { defineConfig } from "wxt";
  *
  * Host access to http(s) pages is required to extract text and inject
  * non-destructive highlights. api.x.ai is used only for BYOK model calls.
+ * Do not add hosts. Grade-card export is local canvas (no network).
  */
 export default defineConfig({
   modules: ["@wxt-dev/module-react"],

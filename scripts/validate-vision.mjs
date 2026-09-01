@@ -58,6 +58,24 @@ assert(binIndex(1, 12) === 11, "bin clamp 1.0");
 const EXPECTED_TYPES = 20;
 assert(EXPECTED_TYPES === 20, "taxonomy still 20 techniques");
 
+// Share-safe grade card: title/host/labels only — never span quotes
+function hostFromUrl(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "") || "unknown-host";
+  } catch {
+    return "unknown-host";
+  }
+}
+assert(hostFromUrl("https://www.example.com/secret-path") === "example.com", "card uses hostname only");
+const fakeSpan = "the overnight markup quietly dropped the rent-control clause";
+const cardJson = JSON.stringify({
+  title: "City Council Debates Housing Plan",
+  subtitle: "example.com",
+  techniques: [{ label: "Loaded language", count: 2 }],
+});
+assert(!cardJson.includes(fakeSpan), "share card JSON excludes span quotes");
+assert(!cardJson.includes("span_text"), "share card JSON excludes span_text key");
+
 if (failed) {
   console.error(`\n${failed} assertion(s) failed`);
   process.exit(1);

@@ -4,10 +4,14 @@
 
 | Field | URL |
 |--------|-----|
-| **Homepage / official** | https://github.com/Pitchfork-and-Torch/bias-noticer |
-| **Support** | https://github.com/Pitchfork-and-Torch/bias-noticer/issues |
-| **Privacy policy** | https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md |
+| **Homepage / official** | https://jonbailey.xyz/bias-noticer/ |
+| **Install hop (share / OG)** | https://jonbailey.xyz/bias-noticer/chrome/ |
+| **Support** | https://jonbailey.xyz/bias-noticer/support/ |
+| **Privacy policy** | https://jonbailey.xyz/bias-noticer/privacy/ |
+| **Privacy (repo copy)** | https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md |
 | **Source / releases** | https://github.com/Pitchfork-and-Torch/bias-noticer/releases |
+| **Chrome Web Store** | https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc |
+| **Listing version** | 2.1.0 (upload zip; CWS is not auto-published) |
 
 ## Single purpose statement
 
@@ -36,7 +40,9 @@ WHAT IT DOES
 • Extracts readable article text from the page you already opened
 • Analyzes with your own xAI Grok API key (BYOK), or offline heuristics if you have no key
 • Paints non-destructive highlights with glassmorphic tooltips
-• Side panel: signals, summary, evidence, research paste, glossary
+• Side panel: signals, summary, evidence, research paste, outlets, Academy, glossary
+• Letter grades (A+–F) plus local outlet / journalist scoreboards from your scans
+• Grades-card PNG or JPEG rendered on your device — attach to a tweet; no article-text upload
 • Research paste for lawfully obtained full text + exportable audit brief
 • Themes: Light, Dark, System, and They Live retro
 • Shortcuts: Ctrl+Shift+B shades · Ctrl+Shift+Y panel · Alt+[ ] navigate
@@ -57,9 +63,10 @@ AI-assisted analysis is not infallible. Use it to sharpen judgment — not repla
 
 Install, pin the icon, open a long-form article, and put on the shades.
 
-Homepage: https://github.com/Pitchfork-and-Torch/bias-noticer
-Support: https://github.com/Pitchfork-and-Torch/bias-noticer/issues
-Privacy: https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md
+Homepage: https://jonbailey.xyz/bias-noticer/
+Support: https://jonbailey.xyz/bias-noticer/support/
+Privacy: https://jonbailey.xyz/bias-noticer/privacy/
+Email: bias@jonbailey.xyz
 Source: https://github.com/Pitchfork-and-Torch/bias-noticer
 ```
 

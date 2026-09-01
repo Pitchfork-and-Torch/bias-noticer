@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bias Noticer Privacy Policy | Data use &amp; BYOK</title>
+  <meta name="description" content="Bias Noticer privacy policy. Local storage, BYOK xAI only, no article-text upload to us, no extra hosts." />
+  <link rel="canonical" href="https://jonbailey.xyz/bias-noticer/privacy/" />
+  <meta property="og:title" content="Bias Noticer Privacy Policy" />
+  <meta property="og:description" content="Privacy-first critical-reading extension. Keys stay on device. Grade cards render locally." />
+  <meta property="og:url" content="https://jonbailey.xyz/bias-noticer/privacy/" />
+  <meta property="og:image" content="https://jonbailey.xyz/bias-noticer/share-card.jpg?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0 auto; max-width: 42rem; padding: 2rem 1.25rem 4rem; font-family: Inter, system-ui, sans-serif; background: #0b1220; color: #e8eef9; line-height: 1.6; }
+    a { color: #7dd3fc; }
+    h1 { font-size: 1.75rem; }
+    h2 { margin-top: 1.75rem; font-size: 1.15rem; }
+    .muted { color: #94a3b8; font-size: 0.9rem; }
+    ul { padding-left: 1.2rem; }
+  </style>
+</head>
+<body>
+  <p class="muted"><a href="https://jonbailey.xyz/bias-noticer/">← Bias Noticer</a></p>
+  <h1>Privacy Policy</h1>
+  <p class="muted">Effective: 2026-09-01 · Product: Bias Noticer browser extension v2.1.0</p>
+
+  <h2>Summary</h2>
+  <p>Bias Noticer is privacy-first. Your xAI API key and settings stay in your browser’s local storage. We do not run ads or sell your data. When you choose to run cloud analysis, article text you select is sent to <strong>xAI</strong> under <strong>your</strong> account. Bias Noticer developers do not operate a proxy that receives article content.</p>
+
+  <h2>Data the extension stores on your device</h2>
+  <ul>
+    <li>Settings (theme, sensitivity, categories, model id)</li>
+    <li>Optional API key (<code>chrome.storage.local</code> only — not synced by the extension)</li>
+    <li>Optional analysis cache and local feedback notes</li>
+    <li>Outlet / journalist scoreboards and compact scan summaries — <strong>not</strong> full article bodies</li>
+    <li>Technique Academy progress (on-device)</li>
+  </ul>
+
+  <h2>Data sent over the network</h2>
+  <ul>
+    <li>Only if you provide an xAI API key and run analysis: prompts and article text (or selection/paste) to <code>https://api.x.ai/</code> using your key.</li>
+    <li>No analytics SDKs ship with the extension.</li>
+    <li>This website (jonbailey.xyz) is separate and may use standard hosting logs.</li>
+    <li>Grades-card PNG/JPEG export is Canvas 2D in the extension. It does <strong>not</strong> upload article text.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <p>storage, activeTab, scripting, sidePanel, contextMenus, host access for <code>https://api.x.ai/*</code> (BYOK only), and host access for http(s) pages so the extension can read the open article and draw non-destructive highlights after you activate it. <strong>No extra hosts.</strong></p>
+
+  <h2>What we do not do</h2>
+  <ul>
+    <li>No paywall circumvention services</li>
+    <li>No sale of personal information</li>
+    <li>No remote code execution of untrusted scripts</li>
+    <li>No left/right political verdicts</li>
+  </ul>
+
+  <h2>Your controls</h2>
+  <p>Clear local data from Settings. Remove the extension anytime. Manage or revoke your xAI key at the xAI console. Optional “Never send full article text” limited mode.</p>
+
+  <h2>Contact</h2>
+  <p>Privacy and support: <a href="mailto:bias@jonbailey.xyz">bias@jonbailey.xyz</a><br />
+  Support page: <a href="https://jonbailey.xyz/bias-noticer/support/">jonbailey.xyz/bias-noticer/support/</a><br />
+  Source: <a href="https://github.com/Pitchfork-and-Torch/bias-noticer">GitHub</a></p>
+</body>
+</html>

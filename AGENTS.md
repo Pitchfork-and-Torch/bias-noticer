@@ -28,6 +28,7 @@ npm run zip
 | `lib/prompt.ts` | System prompt v2 + verify/context prompts |
 | `lib/types.ts` | JSON schema / settings / messages |
 | `lib/grades.ts` | Letter grades + calibrated neutrality |
+| `lib/grade-card.ts` | Local PNG/JPEG grades cards (no upload) |
 | `lib/multi-pass.ts` | Pass merge / finalize / local context |
 | `lib/structure.ts` | Pass 0 structure extraction |
 | `lib/calibration.ts` | Local feedback → threshold nudges |
@@ -48,6 +49,8 @@ npm run zip
 | `entrypoints/popup/` | Compact dashboard |
 | `entrypoints/options/` | Settings + methodology + multi-pass |
 | `docs/VISION.md` | Product vision & architecture |
+| `docs/site/` | Product / privacy / support / install hop / llms.txt |
+| `docs/store/CWS-DROP.md` | Human Chrome Web Store zip upload |
 | `docs/assets/infographic-letter-grades.*` | Grade-scale poster (PNG + HTML) |
 
 ## Public GitHub hygiene

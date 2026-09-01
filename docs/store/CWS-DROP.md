@@ -1,0 +1,31 @@
+# Chrome Web Store drop (not automated)
+
+We **cannot** push the Chrome Web Store from this repository. A human uploads the zip after review.
+
+## 2.1.0 package
+
+1. `npm ci`
+2. `npm run validate`
+3. `npm run compile`
+4. `npm run build`
+5. `npm run zip`
+
+WXT writes a store zip under `.output/` (typically `bias-noticer-*.zip` / `chrome-mv3`). Confirm `manifest.json` inside the zip shows `"version": "2.1.0"`.
+
+## Dashboard paste
+
+- Listing copy: [`STORE-LISTING-FINAL.md`](./STORE-LISTING-FINAL.md)
+- Privacy practices: [`PRIVACY-PRACTICES-PASTE.md`](./PRIVACY-PRACTICES-PASTE.md)
+- Privacy URL (live): https://jonbailey.xyz/bias-noticer/privacy/
+- Homepage: https://jonbailey.xyz/bias-noticer/
+- Support: https://jonbailey.xyz/bias-noticer/support/
+
+## Do not claim
+
+- Auto-publish from GitHub Actions
+- Instant CWS availability after merge
+- New host permissions (there are none in 2.1.0)
+
+## After store review
+
+Tag the GitHub release `v2.1.0` and attach the same zip. Copy `docs/site/*` to jonbailey.xyz when the listing is live so AEO pages match the store version.

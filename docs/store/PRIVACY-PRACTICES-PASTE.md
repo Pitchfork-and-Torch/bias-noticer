@@ -79,12 +79,12 @@ Check **all** boxes that apply. For Bias Noticer, typical answers:
 | Does your item collect or use user data? | **Yes** (API key stored locally; optional article text sent to xAI when user analyzes with a key) |
 | Personally identifiable information | **Yes** if they count an API key / optional pasted text — or follow the form’s definitions carefully |
 | Health / financial / auth / location / web history / user activity | Generally **No** unless the form forces a match for “user activity” — if “website content” or “user activity” covers page text analyzed on user action, select that and disclose |
-| Privacy policy URL | `https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md` |
+| Privacy policy URL | `https://jonbailey.xyz/bias-noticer/privacy/` |
 
 ### Certification text / disclosure (if free-form)
 
 ```
-Bias Noticer stores settings and an optional user-provided xAI API key in chrome.storage.local on the device. When the user runs analysis with a key, article text or text the user pastes is sent to https://api.x.ai/ for processing under that key. Local outlet/journalist scoreboards store compact scan summaries only (no full article bodies). No ads, no sale of personal data, no third-party analytics SDKs. Full policy: https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md
+Bias Noticer stores settings and an optional user-provided xAI API key in chrome.storage.local on the device. When the user runs analysis with a key, article text or text the user pastes is sent to https://api.x.ai/ for processing under that key. Local outlet/journalist scoreboards store compact scan summaries only (no full article bodies). Grades-card PNG/JPEG export is rendered on-device and does not upload article text. No ads, no sale of personal data, no third-party analytics SDKs. Full policy: https://jonbailey.xyz/bias-noticer/privacy/
 ```
 
 **Check the box:** “I certify that the data usage… complies with the Developer Program Policies.”
@@ -94,8 +94,10 @@ Bias Noticer stores settings and an optional user-provided xAI API key in chrome
 ## Privacy policy URL (if on same tab)
 
 ```
-https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md
+https://jonbailey.xyz/bias-noticer/privacy/
 ```
+
+Repo mirror: `https://github.com/Pitchfork-and-Torch/bias-noticer/blob/main/docs/PRIVACY_POLICY.md`
 
 ---
 
@@ -124,8 +126,8 @@ Recommended for this product:
 | Field | Value |
 |--------|--------|
 | Contact email | Your verified Chrome Web Store publisher email |
-| Support URL | `https://github.com/Pitchfork-and-Torch/bias-noticer/issues` |
-| Homepage | `https://github.com/Pitchfork-and-Torch/bias-noticer` |
+| Support URL | `https://jonbailey.xyz/bias-noticer/support/` |
+| Homepage | `https://jonbailey.xyz/bias-noticer/` |
 
 ---
 

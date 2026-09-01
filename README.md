@@ -5,7 +5,8 @@
 ![Bias Noticer hero](docs/assets/hero-they-live.jpg)
 
 [![Live](https://img.shields.io/badge/demo-jonbailey.xyz%2Fbias-noticer-111111)](https://jonbailey.xyz/bias-noticer/)
-[![Version](https://img.shields.io/badge/version-2.0.0-1a1a1a)](https://github.com/Pitchfork-and-Torch/bias-noticer/releases/latest)
+[![Store](https://img.shields.io/badge/store-Chrome%20Web%20Store-1a1a1a)](https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc)
+[![Version](https://img.shields.io/badge/version-2.1.0-1a1a1a)](https://github.com/Pitchfork-and-Torch/bias-noticer/releases/latest)
 
 Privacy-first Chrome / Chromium extension that acts like critical-reading sunglasses: it highlights **rhetorical techniques** and framing choices in news and long-form writing. It never censors a page, never sells your data, and never hands down a partisan "bias score."
 
@@ -28,7 +29,7 @@ Inspired by the *They Live* "put on the sunglasses" moment as a metaphor for med
 
 ---
 
-## Features (v2.0)
+## Features (v2.1)
 
 | | |
 |---|---|
@@ -37,6 +38,7 @@ Inspired by the *They Live* "put on the sunglasses" moment as a metaphor for med
 | **Technique Academy 2.0** | Adaptive drills, mastery + streaks, live spot-the-technique · local progress |
 | **Side panel** | Detected · Summary · Evidence · Research · **Outlets** · **Academy** · Feedback |
 | **Letter grades** | Calibrated neutrality 0-100 → **A+…F** (severity × confidence × voice) |
+| **Grades card** | Local **PNG / JPEG** (1200×630) for tweets — title, host, grade, technique names only |
 | **Outlet scoreboard** | Running averages by hostname · sparklines · clickable audit history |
 | **Journalist scoreboard** | Same grades by byline · multi-author split · local scan timelines |
 | **Research brief** | Premium Markdown / print export with evidence table + methodology note |
@@ -44,7 +46,7 @@ Inspired by the *They Live* "put on the sunglasses" moment as a metaphor for med
 | **Research paste** | Lawful full-text audit path (works without a prior scan) |
 | **Local calibration** | Mark flags wrong / too strong  -  thresholds adjust on-device only |
 | **Themes** | Light / Dark / System / They Live retro |
-| **Privacy** | Key stays in `chrome.storage.local` · optional cache · clear-all-data |
+| **Privacy** | Key stays in `chrome.storage.local` · optional cache · clear-all-data · no extra hosts |
 | **Default model** | `grok-4.3` (configurable) |
 | **Firefox** | `npm run build:firefox` / `npm run zip:firefox` |
 
@@ -81,7 +83,13 @@ Source HTML for the poster: [`docs/assets/infographic-letter-grades.html`](docs/
 
 ## Install (Chrome / Brave / Edge)
 
-### From GitHub Release (recommended)
+### Chrome Web Store
+
+[Add from the Chrome Web Store](https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc) (id `fomgclbljaghhlnnemplpobaipegkkfc`). For X/Twitter previews, share the [install hop](https://jonbailey.xyz/bias-noticer/chrome/) — the store listing has no custom Open Graph tags.
+
+Store version lags GitHub until a human uploads the next zip. We cannot auto-publish CWS from this repo. See [`docs/store/CWS-DROP.md`](docs/store/CWS-DROP.md).
+
+### From GitHub Release
 
 1. Open the latest [**Release**](https://github.com/Pitchfork-and-Torch/bias-noticer/releases) and download **`bias-noticer-chrome-mv3.zip`**.
 2. Unzip to a permanent folder (Chrome needs the folder to stay put).
@@ -133,7 +141,7 @@ npm run zip      # packaged zip via WXT
 
 Stack: **WXT · TypeScript · React · Tailwind · Mozilla Readability**.
 
-Key modules: `lib/grades.ts` (letter scale), `lib/site-cache.ts` (outlet + journalist scoreboards), `lib/signal-radar.ts` + `components/SignalRadar.tsx` (document heat map), `lib/academy.ts` + `components/TechniqueAcademy.tsx` (lessons & drills), `entrypoints/sidepanel/` (main UX).
+Key modules: `lib/grades.ts` (letter scale), `lib/grade-card.ts` (local PNG/JPEG share cards), `lib/site-cache.ts` (outlet + journalist scoreboards), `lib/signal-radar.ts` + `components/SignalRadar.tsx` (document heat map), `lib/academy.ts` + `components/TechniqueAcademy.tsx` (lessons & drills), `entrypoints/sidepanel/` (main UX). Product pages: `docs/site/`.
 
 ---
 

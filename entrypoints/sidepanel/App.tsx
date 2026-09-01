@@ -12,6 +12,7 @@ import { SignalRadar } from "../../components/SignalRadar";
 import { SunglassesIcon } from "../../components/SunglassesIcon";
 import { TechniqueAcademy } from "../../components/TechniqueAcademy";
 import { clusterInstances, type BiasCluster } from "../../lib/cluster";
+import { GradeCardExport } from "../../components/GradeCardExport";
 import {
   ACCESS_METHOD_LABELS,
   analysisToJson,
@@ -22,6 +23,10 @@ import {
   researchBriefToJson,
   researchBriefToMarkdown,
 } from "../../lib/export";
+import {
+  analysisToGradeCardModel,
+  scoreboardToGradeCardModel,
+} from "../../lib/grade-card";
 import { sendToBackground } from "../../lib/messaging";
 import { PROMPT_VERSION } from "../../lib/prompt";
 import {
@@ -1411,6 +1416,7 @@ export function SidePanelApp() {
                     Research brief
                   </button>
                 </div>
+                <GradeCardExport model={analysisToGradeCardModel(analysis)} />
               </div>
               {analysis.instances.length > 0 && (
                 <SignalRadar
@@ -1517,6 +1523,18 @@ export function SidePanelApp() {
                           </p>
                         </div>
                       </div>
+                      <GradeCardExport
+                        compact
+                        model={scoreboardToGradeCardModel({
+                          kind: "journalist",
+                          title: selectedJournalist.journalist.name,
+                          subtitle: "Journalist scoreboard · this device",
+                          neutrality:
+                            selectedJournalist.journalist.avgNeutrality,
+                          sampleCount: selectedJournalist.journalist.samples,
+                          topTypes: selectedJournalist.journalist.topTypes,
+                        })}
+                      />
                       {selectedJournalist.history.length > 0 && (
                         <div>
                           <div className="bn-label">Your scan timeline</div>
@@ -1572,11 +1590,22 @@ export function SidePanelApp() {
                             <strong>
                               {selectedOutlet.outlet.avgNeutrality}
                             </strong>
-                            /100 · {selectedOutlet.outlet.samples} scan
+                            /100 ·                             {selectedOutlet.outlet.samples} scan
                             {selectedOutlet.outlet.samples === 1 ? "" : "s"}
                           </p>
                         </div>
                       </div>
+                      <GradeCardExport
+                        compact
+                        model={scoreboardToGradeCardModel({
+                          kind: "outlet",
+                          title: selectedOutlet.outlet.host,
+                          subtitle: "Outlet scoreboard · this device",
+                          neutrality: selectedOutlet.outlet.avgNeutrality,
+                          sampleCount: selectedOutlet.outlet.samples,
+                          topTypes: selectedOutlet.outlet.topTypes,
+                        })}
+                      />
                       {selectedOutlet.history.length > 0 && (
                         <div>
                           <div className="bn-label">Your scan timeline</div>

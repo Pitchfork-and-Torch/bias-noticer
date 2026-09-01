@@ -655,6 +655,34 @@ export function OptionsApp() {
             >
               Clear all local data
             </button>
+
+            <div className="rounded-xl border border-slate-200 p-3 text-xs leading-relaxed text-slate-600 dark:border-slate-700 dark:text-slate-300">
+              <h3 className="mb-1.5 text-sm font-semibold text-slate-800 dark:text-slate-100">
+                Permissions we actually use
+              </h3>
+              <ul className="list-disc space-y-1 pl-4">
+                <li>
+                  <strong>storage</strong> — settings, optional xAI key, local
+                  cache and scoreboards on this device.
+                </li>
+                <li>
+                  <strong>activeTab / scripting / contextMenus / sidePanel</strong>{" "}
+                  — analyze the page you choose and show highlights / the panel.
+                </li>
+                <li>
+                  <strong>https://api.x.ai/*</strong> — BYOK Grok only, when you
+                  paste a key and run analysis. Heuristics never call it.
+                </li>
+                <li>
+                  <strong>http(s)://*/*</strong> — read the open article DOM and
+                  wrap marks. No extra hosts. No analytics endpoints.
+                </li>
+              </ul>
+              <p className="mt-2">
+                Grade-card PNG/JPEG export is canvas on this device. We do not
+                upload article text to Bias Noticer servers (there are none).
+              </p>
+            </div>
           </section>
         )}
 
