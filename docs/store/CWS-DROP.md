@@ -10,7 +10,7 @@ We **cannot** push the Chrome Web Store from this repository. A human uploads th
 4. `npm run build`
 5. `npm run zip`
 
-WXT writes a store zip under `.output/` (typically `bias-noticer-*.zip` / `chrome-mv3`). Confirm `manifest.json` inside the zip shows `"version": "2.1.0"`.
+WXT writes `.output/bias-noticer-2.1.0-chrome.zip` (about 180 KB). Confirm `manifest.json` inside the zip shows `"version": "2.1.0"` and the same host permissions as 2.0 (`api.x.ai` + http(s) pages only).
 
 ## Dashboard paste
 
