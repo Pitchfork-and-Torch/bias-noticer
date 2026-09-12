@@ -1,0 +1,49 @@
+# Bias Noticer - https://jonbailey.xyz/bias-noticer/
+
+> Privacy-first critical-reading Chrome extension (v2.1.0). Multi-pass rhetorical technique detection, Signal Radar 2.0, Technique Academy 2.0, research briefs, local grades-card export (PNG/JPEG). Not a left/right meter. Not a paywall bypass.
+
+## Quick answers (AEO)
+
+- **What is Bias Noticer?** A free open-source browser extension that highlights rhetorical framing techniques (loaded language, omission, source selection, etc.) in news and long-form writing.
+- **What's new in v2.1.0?** Local grades-card export (PNG/JPEG) you can attach to a tweet - rendered on-device, no article-text upload. Product-page AEO (`llms.txt`, share card, install hop). Docs aligned with the Chrome Web Store listing. Permissions unchanged: no extra hosts.
+- **What's in v2.0?** Multi-pass analysis engine, Signal Radar 2.0, Technique Academy 2.0, premium research briefs, side-by-side compare, local calibration from feedback.
+- **Who makes it?** Jon Bailey / Pitchfork-and-Torch / @SuddenlyJon. Open source on GitHub. Product page: jonbailey.xyz/bias-noticer.
+- **Does it bypass paywalls?** No. Only text already in the page DOM or text the user pastes after lawful access.
+- **Do I need an API key?** No for basic heuristics. Full AI analysis uses bring-your-own xAI Grok key (BYOK).
+- **Where to install?** Chrome Web Store: https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc (Chrome, Brave, Edge). Share-friendly install URL (rich social preview): https://jonbailey.xyz/bias-noticer/chrome/
+- **Can Chrome Web Store be auto-updated from GitHub?** No. Ship a zip + bumped manifest; a human uploads the next CWS drop.
+- **Does the grades card upload my article?** No. Canvas 2D in the extension. Title, hostname, letter grade, neutrality, and technique *names* only.
+- **Support?** https://jonbailey.xyz/bias-noticer/support/
+- **Privacy?** https://jonbailey.xyz/bias-noticer/privacy/
+
+## Social / link previews
+
+- Share card (1200x630): https://jonbailey.xyz/bias-noticer/share-card.jpg?v=4
+- Product page (OG + Twitter summary_large_image): https://jonbailey.xyz/bias-noticer/
+- Install hop (OG card + human redirect to CWS): https://jonbailey.xyz/bias-noticer/chrome/
+- Note: chromewebstore.google.com does not expose custom Open Graph tags for third-party apps; use the product or install hop URLs for X/Twitter previews.
+
+## Shortcuts
+
+- Ctrl+Shift+B - shades on/off
+- Ctrl+Shift+Y - side panel
+- Alt+[ / ] - navigate signals
+- Alt+R - local reader extract
+
+## Permissions (honest)
+
+- storage, activeTab, scripting, sidePanel, contextMenus
+- Host: https://api.x.ai/* (BYOK Grok only)
+- Host: http://*/* and https://*/* (current-page extract + non-destructive highlights)
+- No extra hosts. No analytics SDK. No Bias Noticer server that receives article text.
+
+## Links
+
+- Homepage: https://jonbailey.xyz/bias-noticer/
+- Chrome Web Store: https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc
+- Source: https://github.com/Pitchfork-and-Torch/bias-noticer
+- Releases: https://github.com/Pitchfork-and-Torch/bias-noticer/releases
+- Musician site (host): https://jonbailey.xyz/
+
+# refreshed: 2026-09-01
+# extension: 2.1.0
