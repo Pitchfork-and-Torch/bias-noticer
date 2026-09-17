@@ -2,6 +2,11 @@
 
 Bias Noticer - They Live - inspired critical-reading extension. Highlights rhetorical techniques with BYOK Grok; privacy-first; no paywall bypass. Local letter grades, Signal Radar, Technique Academy, and outlet/journalist scoreboards from your own scans.
 
+## Unreleased
+
+### Fixes
+- Outlet and journalist scoreboards, scan history, and the toolbar badge tooltip now record the same **calibrated** neutrality the popup and side panel display. Previously they stored the raw model score, so an article could show one letter grade in the panel and a different grade in the Outlets tab. Existing local scoreboard rows are unchanged; new scans use the corrected value.
+
 ## 2.1.0 - Shareable grades, honest docs
 
 Visible upgrades on top of 2.0. Detection engine and host permissions are unchanged.

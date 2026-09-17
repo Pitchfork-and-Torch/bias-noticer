@@ -31,7 +31,7 @@ UI grades prefer **calibrated** scores when multi-pass / heuristics finalize an 
 - **Downgraded** verification status reduces load
 - **Content-type nudge**: satire/opinion slightly less punitive; press releases slightly more
 
-Raw model `neutrality_score` is retained for transparency; `calibrated_neutrality` is what letter badges use via `displayNeutrality()`.
+Raw model `neutrality_score` is retained for transparency; `calibrated_neutrality` is what letter badges use via `displayNeutrality()`. The same calibrated value is what gets rolled into outlet and journalist averages, scan history, and the toolbar badge tooltip, so one article gets one grade everywhere.
 
 ## Outlets
 

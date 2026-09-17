@@ -47,6 +47,7 @@ import {
   loadCalibration,
 } from "../lib/calibration";
 import { compareAnalyses } from "../lib/compare";
+import { displayNeutrality } from "../lib/grades";
 import { buildMediaDietSummary } from "../lib/media-diet";
 import {
   finalizeAnalysis,
@@ -282,7 +283,8 @@ async function updateBadge(tabId: number, analysis: BiasAnalysis | null) {
       tabId,
       text: n > 0 ? String(Math.min(n, 99)) : "0",
     });
-    const score = analysis.summary.neutrality_score;
+    // Same calibrated score the popup / side panel display
+    const score = displayNeutrality(analysis.summary);
     const color =
       score >= 75 ? "#16a34a" : score >= 50 ? "#ca8a04" : score >= 30 ? "#ea580c" : "#dc2626";
     await chrome.action.setBadgeBackgroundColor({ tabId, color });
@@ -1006,7 +1008,8 @@ async function runAnalysisForTab(
         url: extract.url,
         title: analysis.title,
         byline: extract.byline,
-        neutrality: analysis.summary.neutrality_score,
+        // Calibrated score, so scoreboard rows match the grade shown in the panel
+        neutrality: displayNeutrality(analysis.summary),
         signalCount: analysis.instances.length,
         source: analysis.source,
         topTypes: analysis.instances.slice(0, 5).map((i) => i.bias_type),
@@ -1195,7 +1198,7 @@ async function runPastedTextAnalysis(
     await recordArticleScan({
       url: sourceUrl,
       title: analysis.title,
-      neutrality: analysis.summary.neutrality_score,
+      neutrality: displayNeutrality(analysis.summary),
       signalCount: analysis.instances.length,
       source: analysis.source,
       topTypes: analysis.instances.slice(0, 5).map((i) => i.bias_type),
