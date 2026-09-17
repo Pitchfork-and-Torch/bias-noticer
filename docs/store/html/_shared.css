@@ -1,0 +1,53 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #05070c;
+  color: #e2e8f0;
+  overflow: hidden;
+}
+.scan {
+  position: fixed; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.02) 2px,
+    rgba(255,255,255,0.02) 4px
+  );
+}
+.neon { background: linear-gradient(90deg, #22d3ee, #a3e635, #e879f9); }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-size: 12px;
+  border: 1px solid rgba(34,211,238,0.35); color: #67e8f9;
+  background: rgba(8,51,68,0.6);
+}
+.btn-primary {
+  background: linear-gradient(135deg, #0891b2, #0e7490);
+  color: white; border: none; border-radius: 12px;
+  padding: 10px 16px; font-weight: 700; font-size: 14px;
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.06); color: #e2e8f0;
+  border: 1px solid rgba(148,163,184,0.3); border-radius: 12px;
+  padding: 10px 14px; font-weight: 600; font-size: 13px;
+}
+.glass {
+  background: rgba(15,23,42,0.85);
+  border: 1px solid rgba(148,163,184,0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+}
+.mark {
+  background: linear-gradient(180deg, transparent 60%, rgba(244,63,94,0.45) 60%);
+  border-bottom: 2px wavy #f43f5e;
+  padding: 0 2px;
+}
+.mark.cyan {
+  background: linear-gradient(180deg, transparent 60%, rgba(34,211,238,0.4) 60%);
+  border-bottom-color: #22d3ee;
+}
+.mark.lime {
+  background: linear-gradient(180deg, transparent 60%, rgba(163,230,53,0.4) 60%);
+  border-bottom-color: #a3e635;
+}
