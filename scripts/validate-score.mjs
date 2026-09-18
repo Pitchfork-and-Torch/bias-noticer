@@ -100,6 +100,11 @@ assert(finiteNeutrality(120) === 100, "finiteNeutrality clamps 120");
 assert(finiteNeutrality(-4, 0) === 0, "finiteNeutrality clamps negatives");
 assert(finiteNeutrality(0, 50) === 0, "Grok parse fallback keeps model 0");
 assert((Number(0) || 50) === 50, "|| 50 is the footgun finiteNeutrality avoids");
+assert(finiteNeutrality(true, 50) === 50, "finiteNeutrality rejects boolean true");
+assert(finiteNeutrality(false, 50) === 50, "finiteNeutrality rejects boolean false");
+assert(finiteNeutrality("", 50) === 50, "finiteNeutrality rejects empty string");
+assert(finiteNeutrality("   ", 50) === 50, "finiteNeutrality rejects whitespace string");
+assert(finiteNeutrality("70", 50) === 70, "finiteNeutrality still parses numeric strings");
 
 const zeroFlag = computeCalibratedNeutrality(
   [inst({ severity: 5, confidence: 0.9, voice: "author" })],

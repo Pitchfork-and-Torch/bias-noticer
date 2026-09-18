@@ -37,6 +37,10 @@ export interface GradeInfo {
  * 0 is valid (extreme framing load) - never treat it as missing via `|| fallback`.
  */
 export function finiteNeutrality(score: unknown, fallback = 50): number {
+  // bool⊂Number coercion: true→1 / false→0 would look like real scores.
+  if (typeof score === "boolean") return fallback;
+  // Blank / whitespace strings Number("")→0 (extreme framing) — fail closed.
+  if (typeof score === "string" && !score.trim()) return fallback;
   const n = typeof score === "number" ? score : Number(score);
   if (!Number.isFinite(n)) return fallback;
   return Math.max(0, Math.min(100, n));
