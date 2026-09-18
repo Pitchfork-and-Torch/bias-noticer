@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bias Noticer share card 1200×630</title>
+  <style>
+    html, body { margin: 0; background: #020617; }
+    .card {
+      width: 1200px; height: 630px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse 900px 500px at 12% 0%, rgba(56, 189, 248, 0.16), transparent 55%),
+        radial-gradient(ellipse 700px 420px at 92% 8%, rgba(129, 140, 248, 0.16), transparent 50%),
+        linear-gradient(180deg, #0b1220 0%, #0d1526 50%, #0b1220 100%);
+      color: #e8eef9;
+      font-family: Inter, system-ui, sans-serif;
+    }
+    .card::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .inner { position: relative; z-index: 1; padding: 56px 72px; height: 100%; box-sizing: border-box; }
+    .brand { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+    .tag { margin-top: 8px; color: #38bdf8; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 14px; }
+    h1 { margin: 36px 0 16px; font-size: 64px; line-height: 1.05; letter-spacing: -0.04em; max-width: 16ch; }
+    .sub { font-size: 22px; color: #cbd5e1; max-width: 28ch; }
+    .pills { display: flex; gap: 10px; margin-top: 36px; flex-wrap: wrap; }
+    .pill {
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(15, 23, 42, 0.55);
+      border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600;
+    }
+    .foot {
+      position: absolute; left: 72px; right: 72px; bottom: 48px;
+      display: flex; justify-content: space-between; color: #94a3b8; font-size: 16px; font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Screenshot this at 1200×630 → share-card.jpg. Host as /bias-noticer/share-card.jpg?v=4 -->
+  <div class="card">
+    <div class="inner">
+      <div class="brand">Bias Noticer</div>
+      <div class="tag">v2.1.1 · privacy-first · BYOK Grok</div>
+      <h1>See through the propaganda.</h1>
+      <p class="sub">Critical-reading sunglasses. Techniques over tribes. Not a left/right meter. Not a paywall bypass.</p>
+      <div class="pills">
+        <span class="pill">Local grades-card PNG/JPEG</span>
+        <span class="pill">Letter grades A+ - F</span>
+        <span class="pill">Heuristics without a key</span>
+      </div>
+      <div class="foot">
+        <span>jonbailey.xyz/bias-noticer</span>
+        <span>@SuddenlyJon</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
