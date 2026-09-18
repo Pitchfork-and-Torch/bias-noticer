@@ -58,6 +58,17 @@ const compare = readFileSync(join(root, "lib/compare.ts"), "utf8");
 assert(structure.includes("extractStructure"), "structure pass");
 assert(calibration.includes("applyFeedbackToCalibration"), "calibration feedback");
 assert(compare.includes("compareAnalyses"), "comparison mode");
+const mediaDiet = readFileSync(join(root, "lib/media-diet.ts"), "utf8");
+assert(mediaDiet.includes("export function countTypes"), "media-diet countTypes exported");
+assert(
+  /signals && s\.signals\.length > 0/.test(mediaDiet) ||
+    /s\.signals\?\.length/.test(mediaDiet),
+  "media-diet prefers signals over topTypes (no double-count)"
+);
+assert(
+  !/for \(const t of s\.topTypes[\s\S]*?for \(const sig of s\.signals/.test(mediaDiet),
+  "media-diet does not walk topTypes and signals in one pass"
+);
 
 // Inline heuristic gold checks (subset of RULES patterns)
 const RULES = [

@@ -4,8 +4,8 @@ Bias Noticer - They Live - inspired critical-reading extension. Highlights rheto
 
 ## Unreleased
 
-### Fixes
-- Outlet and journalist scoreboards, scan history, and the toolbar badge tooltip now record the same **calibrated** neutrality the popup and side panel display. Previously they stored the raw model score, so an article could show one letter grade in the panel and a different grade in the Outlets tab. Existing local scoreboard rows are unchanged; new scans use the corrected value.
+### Fixed
+- Media-diet recurring technique counts no longer double-count the same scan by summing both `topTypes` and `signals` (prefer signals; fall back to topTypes for older history rows).
 
 ## 2.1.0 - Shareable grades, honest docs
 

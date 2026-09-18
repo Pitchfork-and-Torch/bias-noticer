@@ -37,14 +37,23 @@ export interface MediaDietSummary {
   contentTypeMix: Array<{ type: string; count: number }>;
 }
 
-function countTypes(scans: ArticleScan[]): Map<string, number> {
+/**
+ * Count technique marks across scans.
+ * Prefer `signals` when present (richer). Do not also add `topTypes` from
+ * the same scan - those are a subset of the same instances and would
+ * double-count every overlapping type family.
+ */
+export function countTypes(scans: ArticleScan[]): Map<string, number> {
   const m = new Map<string, number>();
   for (const s of scans) {
-    for (const t of s.topTypes || []) {
-      m.set(t, (m.get(t) || 0) + 1);
-    }
-    for (const sig of s.signals || []) {
-      m.set(sig.type, (m.get(sig.type) || 0) + 1);
+    if (s.signals && s.signals.length > 0) {
+      for (const sig of s.signals) {
+        m.set(sig.type, (m.get(sig.type) || 0) + 1);
+      }
+    } else {
+      for (const t of s.topTypes || []) {
+        m.set(t, (m.get(t) || 0) + 1);
+      }
     }
   }
   return m;
