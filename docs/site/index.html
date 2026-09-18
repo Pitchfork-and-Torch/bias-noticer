@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bias Noticer - See through the propaganda</title>
+  <meta name="description" content="Privacy-first critical-reading Chrome extension (v2.1.1). Highlights rhetorical techniques. Local grades-card PNG/JPEG. BYOK Grok or heuristics. Not a left/right meter. Not a paywall bypass." />
+  <link rel="canonical" href="https://jonbailey.xyz/bias-noticer/" />
+  <link rel="alternate" type="text/plain" href="https://jonbailey.xyz/bias-noticer/llms.txt" title="llms.txt" />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bias Noticer" />
+  <meta property="og:title" content="Bias Noticer - See through the propaganda" />
+  <meta property="og:description" content="Privacy-first critical-reading sunglasses for Chrome. Techniques over tribes. Local share cards. v2.1.1" />
+  <meta property="og:url" content="https://jonbailey.xyz/bias-noticer/" />
+  <meta property="og:image" content="https://jonbailey.xyz/bias-noticer/share-card.jpg?v=4" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bias Noticer - put on the shades. Not a left/right meter." />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@SuddenlyJon" />
+  <meta name="twitter:creator" content="@SuddenlyJon" />
+  <meta name="twitter:title" content="Bias Noticer - See through the propaganda" />
+  <meta name="twitter:description" content="v2.1.1 critical-reading extension. Local grades-card export. BYOK Grok. Never a left/right meter." />
+  <meta name="twitter:image" content="https://jonbailey.xyz/bias-noticer/share-card.jpg?v=4" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Bias Noticer",
+    "applicationCategory": "BrowserApplication",
+    "operatingSystem": "Chrome, Brave, Edge",
+    "softwareVersion": "2.1.1",
+    "url": "https://jonbailey.xyz/bias-noticer/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc",
+    "author": {
+      "@type": "Person",
+      "name": "Jon Bailey",
+      "url": "https://jonbailey.xyz/",
+      "sameAs": [
+        "https://x.com/SuddenlyJon",
+        "https://github.com/Pitchfork-and-Torch"
+      ]
+    },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Privacy-first critical-reading Chrome extension that highlights rhetorical bias techniques. Not a left/right meter. Not a paywall bypass."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Bias Noticer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A free open-source browser extension that highlights rhetorical framing techniques in news and long-form writing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it bypass paywalls?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. It only uses text already in the page DOM or text you paste after lawful access."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an API key?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No for basic heuristics. Full AI analysis uses a bring-your-own xAI Grok key."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the grades card upload my article?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. PNG/JPEG cards are rendered on your device. Title, host, letter grade, and technique names only."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Inter, system-ui, sans-serif; background: #0b1220; color: #e8eef9;
+      line-height: 1.55;
+    }
+    header, main, footer { max-width: 44rem; margin: 0 auto; padding: 0 1.25rem; }
+    header { padding-top: 2.5rem; }
+    h1 { font-size: 2rem; letter-spacing: -0.03em; margin: 0 0 0.4rem; }
+    .tag { color: #38bdf8; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .lead { color: #cbd5e1; font-size: 1.05rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.25rem 0 2rem; }
+    a.btn {
+      display: inline-block; padding: 0.7rem 1rem; border-radius: 0.75rem;
+      background: #0284c7; color: #fff; font-weight: 700; text-decoration: none;
+    }
+    a.ghost { color: #7dd3fc; align-self: center; }
+    h2 { font-size: 1.15rem; margin-top: 2rem; }
+    ul { padding-left: 1.15rem; }
+    .card {
+      background: #152038; border: 1px solid rgba(148,163,184,0.16);
+      border-radius: 1rem; padding: 1rem 1.1rem; margin: 1rem 0;
+    }
+    footer { padding: 2.5rem 1.25rem 3rem; color: #64748b; font-size: 0.85rem; }
+    a { color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">v2.1.1 · Pitchfork-and-Torch</p>
+    <h1>Bias Noticer</h1>
+    <p class="lead">See through the propaganda. Privacy-first critical-reading sunglasses for Chrome, Brave, and Edge. Highlights rhetorical techniques. Never a left/right meter. Never a paywall bypass.</p>
+    <div class="actions">
+      <a class="btn" href="https://jonbailey.xyz/bias-noticer/chrome/">Install (share-friendly hop)</a>
+      <a class="ghost" href="https://github.com/Pitchfork-and-Torch/bias-noticer">Source</a>
+    </div>
+  </header>
+  <main>
+    <div class="card">
+      <strong>Quick answers</strong>
+      <ul>
+        <li><strong>What is it?</strong> A free open-source extension that names framing techniques (loaded language, omission, source selection, and more).</li>
+        <li><strong>What's new in 2.1.1?</strong> Neutrality 0 stays 0. Local calibration on heuristics. Gold suite 20/20. Grades-card PNG/JPEG stays on-device.</li>
+        <li><strong>Need a key?</strong> No for heuristics. Full AI is BYOK xAI Grok.</li>
+        <li><strong>Paywalls?</strong> No bypass. DOM text or lawful paste only.</li>
+      </ul>
+    </div>
+    <h2>Features</h2>
+    <ul>
+      <li>Multi-pass analysis (structure → detect → verify → optional context)</li>
+      <li>Signal Radar 2.0 and Technique Academy 2.0</li>
+      <li>Letter grades A+ - F from calibrated neutrality - techniques over tribes</li>
+      <li>Outlet and journalist scoreboards from <em>your</em> local scans</li>
+      <li>Research brief Markdown / print export</li>
+      <li>Grades-card PNG or JPEG, rendered on-device</li>
+    </ul>
+    <h2>Shortcuts</h2>
+    <ul>
+      <li><kbd>Ctrl+Shift+B</kbd> shades on/off</li>
+      <li><kbd>Ctrl+Shift+Y</kbd> side panel</li>
+      <li><kbd>Alt+[</kbd> / <kbd>Alt+]</kbd> navigate signals</li>
+      <li><kbd>Alt+R</kbd> local reader extract</li>
+    </ul>
+    <p>Agents: read <a href="./llms.txt">llms.txt</a>. Humans sharing on X: use the <a href="./chrome/">install hop</a> so the preview card works (the Chrome Web Store does not expose custom Open Graph tags).</p>
+  </main>
+  <footer>
+    <p>Owner: Jon Bailey / Pitchfork-and-Torch / <a href="https://x.com/SuddenlyJon">@SuddenlyJon</a></p>
+    <p><a href="./privacy/">Privacy</a> · <a href="./support/">Support</a> · <a href="https://chromewebstore.google.com/detail/bias-noticer/fomgclbljaghhlnnemplpobaipegkkfc">Chrome Web Store</a></p>
+    <p>Refreshed 2026-09-01 · Source of truth: this repository.</p>
+  </footer>
+</body>
+</html>
