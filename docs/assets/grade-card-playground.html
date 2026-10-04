@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bias Noticer - grades card playground</title>
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #0b1220; color: #e8eef9; padding: 24px; }
+    h1 { font-size: 1.1rem; }
+    p { color: #94a3b8; max-width: 42rem; }
+    canvas { display: block; width: min(100%, 1200px); height: auto; border-radius: 16px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    button { border: 0; border-radius: 10px; padding: 8px 12px; font-weight: 700; cursor: pointer; background: #0284c7; color: #fff; }
+    button.secondary { background: #1e293b; color: #e2e8f0; }
+    #status { font-size: 13px; color: #7dd3fc; }
+  </style>
+</head>
+<body>
+  <h1>Grades card playground (local canvas)</h1>
+  <p>Mirrors the extension card: 1200×630, share-safe fields only. Used to verify layout before the next CWS drop. No network calls.</p>
+  <div class="row">
+    <button type="button" id="png">Download PNG</button>
+    <button type="button" class="secondary" id="jpg">Download JPEG</button>
+  </div>
+  <p id="status"></p>
+  <canvas id="c" width="1200" height="630"></canvas>
+  <script>
+    const model = {
+      kind: "article",
+      title: "City Council Debates Housing Plan After Overnight Markup",
+      subtitle: "example.com",
+      neutrality: 80,
+      grade: "B-",
+      gradeLabel: "Noticeable framing",
+      gradeColor: "#a3e635",
+      signalCount: 7,
+      techniques: [
+        { label: "Loaded language", count: 3, hex: "#f43f5e" },
+        { label: "Omission / framing", count: 2, hex: "#f59e0b" },
+        { label: "Source selection", count: 2, hex: "#38bdf8" },
+      ],
+      contentType: "hard news",
+      source: "heuristic",
+      analyzedAt: "2026-09-01",
+      version: "2.1.1",
+    };
+
+    const DISCLAIMER = "Techniques over tribes. Not a left/right meter. Not a truth score.";
+    const PRODUCT = "jonbailey.xyz/bias-noticer";
+
+    function roundRect(ctx, x, y, w, h, r) {
+      const radius = Math.min(r, w / 2, h / 2);
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.arcTo(x + w, y, x + w, y + h, radius);
+      ctx.arcTo(x + w, y + h, x, y + h, radius);
+      ctx.arcTo(x, y + h, x, y, radius);
+      ctx.arcTo(x, y, x + w, y, radius);
+      ctx.closePath();
+    }
+
+    function wrapLines(ctx, text, maxWidth, maxLines) {
+      const words = text.split(/\s+/);
+      const lines = [];
+      let current = "";
+      for (const word of words) {
+        const next = current ? current + " " + word : word;
+        if (ctx.measureText(next).width <= maxWidth) current = next;
+        else {
+          if (current) lines.push(current);
+          current = word;
+          if (lines.length === maxLines - 1) break;
+        }
+      }
+      if (current && lines.length < maxLines) lines.push(current);
+      return lines;
+    }
+
+    function draw(ctx, m) {
+      const w = 1200, h = 630;
+      const bg = ctx.createLinearGradient(0, 0, w, h);
+      bg.addColorStop(0, "#0b1220");
+      bg.addColorStop(1, "#0a101c");
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, w, h);
+      const glow = ctx.createRadialGradient(180, 160, 20, 180, 160, 420);
+      glow.addColorStop(0, "rgba(56, 189, 248, 0.16)");
+      glow.addColorStop(1, "rgba(56, 189, 248, 0)");
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, w, h);
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.22)";
+      ctx.lineWidth = 2;
+      roundRect(ctx, 28, 24, w - 56, h - 48, 28);
+      ctx.stroke();
+      ctx.fillStyle = "#e8eef9";
+      ctx.font = "700 28px Inter, system-ui, sans-serif";
+      ctx.fillText("Bias Noticer", 64, 72);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 15px Inter, system-ui, sans-serif";
+      ctx.fillText("See through the propaganda.", 64, 96);
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = "600 13px Inter, system-ui, sans-serif";
+      ctx.fillText("ARTICLE GRADE  ·  FRAMING LOAD", 64, 136);
+      const cx = 210, cy = 330;
+      ctx.lineWidth = 14;
+      ctx.strokeStyle = "rgba(148, 163, 184, 0.18)";
+      ctx.beginPath();
+      ctx.arc(cx, cy, 118, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.strokeStyle = m.gradeColor;
+      ctx.lineCap = "round";
+      ctx.beginPath();
+      ctx.arc(cx, cy, 118, -Math.PI / 2, -Math.PI / 2 + (m.neutrality / 100) * Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = m.gradeColor;
+      ctx.font = "800 72px Inter, system-ui, sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(m.grade, cx, cy + 8);
+      ctx.fillStyle = "#e8eef9";
+      ctx.font = "700 28px Inter, system-ui, sans-serif";
+      ctx.fillText(String(m.neutrality), cx, cy + 52);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 14px Inter, system-ui, sans-serif";
+      ctx.fillText("neutrality / 100", cx, cy + 78);
+      ctx.textAlign = "left";
+      const colX = 400;
+      ctx.fillStyle = "#64748b";
+      ctx.font = "600 14px Inter, system-ui, sans-serif";
+      ctx.fillText(m.subtitle, colX, 180);
+      ctx.fillStyle = "#f8fafc";
+      ctx.font = "700 36px Inter, system-ui, sans-serif";
+      wrapLines(ctx, m.title, 720, 2).forEach((line, i) => ctx.fillText(line, colX, 228 + i * 44));
+      ctx.fillStyle = m.gradeColor;
+      ctx.font = "600 20px Inter, system-ui, sans-serif";
+      ctx.fillText(m.gradeLabel, colX, 340);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 15px Inter, system-ui, sans-serif";
+      ctx.fillText(m.contentType + "  ·  source: " + m.source + "  ·  " + m.signalCount + " signals  ·  " + m.analyzedAt, colX, 372);
+      let chipX = colX;
+      m.techniques.forEach((t) => {
+        const label = t.count > 1 ? t.label + "  ×" + t.count : t.label;
+        ctx.font = "600 14px Inter, system-ui, sans-serif";
+        const tw = ctx.measureText(label).width + 28;
+        ctx.fillStyle = "rgba(15, 23, 42, 0.72)";
+        ctx.strokeStyle = t.hex + "99";
+        ctx.lineWidth = 1.5;
+        roundRect(ctx, chipX, 400, tw, 34, 17);
+        ctx.fill();
+        ctx.stroke();
+        ctx.fillStyle = "#e2e8f0";
+        ctx.fillText(label, chipX + 14, 423);
+        chipX += tw + 10;
+      });
+      ctx.fillStyle = "rgba(148, 163, 184, 0.2)";
+      ctx.fillRect(64, 520, w - 128, 1);
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 14px Inter, system-ui, sans-serif";
+      ctx.fillText(DISCLAIMER, 64, 552);
+      ctx.fillStyle = "#cbd5e1";
+      ctx.font = "600 15px Inter, system-ui, sans-serif";
+      ctx.fillText(PRODUCT + "   ·   v" + m.version + "   ·   rendered on your device", 64, 580);
+    }
+
+    const canvas = document.getElementById("c");
+    draw(canvas.getContext("2d"), model);
+
+    function dl(type, name) {
+      const a = document.createElement("a");
+      a.href = canvas.toDataURL(type, 0.88);
+      a.download = name;
+      a.click();
+      document.getElementById("status").textContent = "Saved locally: " + name;
+    }
+    document.getElementById("png").onclick = () => dl("image/png", "bn-grade-card-playground.png");
+    document.getElementById("jpg").onclick = () => dl("image/jpeg", "bn-grade-card-playground.jpg");
+  </script>
+</body>
+</html>
