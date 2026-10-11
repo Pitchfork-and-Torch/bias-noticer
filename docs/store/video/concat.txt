@@ -1,0 +1,15 @@
+file 'frames/frame_00.jpg'
+duration 2.2
+file 'frames/frame_01.jpg'
+duration 2.2
+file 'frames/frame_02.jpg'
+duration 2.2
+file 'frames/frame_03.jpg'
+duration 2.2
+file 'frames/frame_04.jpg'
+duration 2.2
+file 'frames/frame_05.jpg'
+duration 2.2
+file 'frames/frame_06.jpg'
+duration 2.2
+file 'frames/frame_06.jpg'
